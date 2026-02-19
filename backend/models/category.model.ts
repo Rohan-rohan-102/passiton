@@ -1,6 +1,6 @@
 // models/category.model.ts
 import pool from "../config/db";
-import { ICategory } from "@common/types";
+import { ICategory } from "../types";
 
 export const CategorySQL = {
     create: async (name: string, slug: string): Promise<ICategory> => {

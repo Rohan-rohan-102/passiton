@@ -1,5 +1,5 @@
 import { query } from '../config/db';
-import { IUser } from '@common/types';
+import { IUser } from '../types';
 
 export const UserSQL = {
 

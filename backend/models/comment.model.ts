@@ -1,5 +1,5 @@
 import { query } from '../config/db';
-import { IComment } from '@common/types';
+import { IComment } from '../types';
 
 export const CommentSQL = {
     create: async (userId: number, blogId: number, content: string): Promise<IComment> => {

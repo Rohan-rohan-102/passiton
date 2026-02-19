@@ -16,7 +16,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { deleteData } from '@/utility/handleDelete'
 import { showToast } from '@/utility/showToast'
 
-// 1. Define the Comment structure
+// 1. Define the Comment structure yooo
 interface CommentItem {
     id: string;
     content: string;

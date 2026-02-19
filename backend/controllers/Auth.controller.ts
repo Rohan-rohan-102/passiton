@@ -11,7 +11,7 @@ export const Register = async (req: Request, res: Response, next: NextFunction) 
         
         const checkUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
         if (checkUser.rows.length > 0) {
-            return next(handleError(409, 'User already registered.'));
+            return next(handleError(409, 'User already registered.'));   //yoo
         }
 
         
