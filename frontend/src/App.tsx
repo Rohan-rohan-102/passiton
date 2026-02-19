@@ -31,7 +31,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Parent Route */}
+        {/* Parent Route and parent routes */}
         <Route path={RouteIndex} element={<Layout />}>
           <Route index element={<Index />} />
 
