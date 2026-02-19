@@ -27,7 +27,7 @@ export const addCategory = async (req: Request, res: Response, next: NextFunctio
         console.error("🔥 FULL ERROR:", error);
         next(handleError(500, error.message));
     }
-};
+};  //nnn
 
 
 export const showCategory = async (req: Request, res: Response, next: NextFunction) => {
