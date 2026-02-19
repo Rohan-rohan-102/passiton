@@ -43,7 +43,7 @@ const Index: React.FC = () => {
     return (
         <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
             {blogData && blogData.blog.length > 0 ? (
-                // 4. blogData.blog is now typed as an array of Blog objects
+                // 4. blogData.blog is now typed as an array of Blog objects yoo
                 blogData.blog.map((blog) => (
                     <BlogCard key={blog.id} props={blog} />
                 ))

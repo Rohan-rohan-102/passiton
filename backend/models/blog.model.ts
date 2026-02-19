@@ -1,5 +1,5 @@
 import { query } from '../config/db';
-import { IBlog } from '@common/types';
+import { IBlog } from '../types';
 
 export const BlogSQL = {
     create: async (blog: IBlog) => {
