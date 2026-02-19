@@ -7,10 +7,10 @@ import React from 'react'
 // 1. Define the shape of a single blog post
 // (Ideally, move this to a types/blog.ts file later)
 interface Blog {
-    _id: string;
+    id: string;
     title: string;
     slug: string;
-    featuredImage: string;
+    featured_image: string;
     createdAt: string;
     category: {
         slug: string;
@@ -45,7 +45,7 @@ const Index: React.FC = () => {
             {blogData && blogData.blog.length > 0 ? (
                 // 4. blogData.blog is now typed as an array of Blog objects
                 blogData.blog.map((blog) => (
-                    <BlogCard key={blog._id} props={blog} />
+                    <BlogCard key={blog.id} props={blog} />
                 ))
             ) : (
                 <div className="col-span-full text-center py-20 text-gray-500">
