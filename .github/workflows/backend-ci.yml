@@ -1,0 +1,11 @@
+name: Backend CI
+on:
+  pull_request:
+    paths: ['backend/**', 'common/**']
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd backend && npm ci
+      - run: cd backend && npx tsc # Compiles TS to catch errors
