@@ -4,7 +4,7 @@ import { handleError } from "../utility/handleError";
 
 export const addcomment = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        // 1. Safe: Get ID from the token, not the body
+        // 1. Safe: Get ID from the token, not the body nnn
         const userId = (req as any).user.id; 
         
         // 2. Extract blogid and content (match your SQL helper names)
