@@ -27,4 +27,4 @@ jobs:
 
       - name: TypeScript Check
         working-directory: backend
-        run: npx tsc --noEmit
+        run: npx -p typescript tsc --noEmit
