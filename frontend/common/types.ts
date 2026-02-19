@@ -1,4 +1,4 @@
-/// <reference types="multer" />
+
 
 export interface IUser {
     id?: number;
@@ -87,7 +87,7 @@ declare global {
     namespace Express {
         interface Request {
             user?: UserPayload;
-            file?: Multer.File;
+            file?: any;
         }
     } }
 
