@@ -32,7 +32,7 @@ export interface IBlog {
     title: string;
     slug: string;
     blog_content: string;
-    featured_image: string;
+    featured_image?: string;
     created_at?: Date;
     updated_at?: Date;
 }
