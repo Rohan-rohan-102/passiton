@@ -1,11 +1,29 @@
 name: Frontend CI
+
 on:
-  pull_request:
+  push:
+    branches: [main]
     paths: ['frontend/**', 'common/**']
+  pull_request:
+    branches: [main]
+    paths: ['frontend/**', 'common/**']
+
 jobs:
-  test:
+  validate-frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cd frontend && npm ci
-      - run: cd frontend && npx tsc # Type-check
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: TypeScript Check
+        working-directory: frontend
+        run: npx tsc --noEmit

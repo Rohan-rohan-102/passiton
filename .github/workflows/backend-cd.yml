@@ -1,16 +1,22 @@
 name: Backend Deploy
+
 on:
   push:
     branches: [main]
     paths: ['backend/**', 'common/**']
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # This ensures we don't deploy if the code is broken
     steps:
       - uses: actions/checkout@v4
-      - name: Install Railway
+
+      - name: Install Railway CLI
         run: npm i -g @railway/cli
-      - name: Deploy
-        run: railway up --service your-service-name -d
+
+      - name: Deploy to Railway
+        # Replace 'passiton' with your actual Railway service name
+        run: railway up --service passiton -d 
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

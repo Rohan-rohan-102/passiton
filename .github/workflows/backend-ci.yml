@@ -1,11 +1,29 @@
 name: Backend CI
+
 on:
-  pull_request:
+  push:
+    branches: [main]
     paths: ['backend/**', 'common/**']
+  pull_request:
+    branches: [main]
+    paths: ['backend/**', 'common/**']
+
 jobs:
-  test:
+  validate-backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cd backend && npm ci
-      - run: cd backend && npx tsc # Compiles TS to catch errors
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: TypeScript Check
+        working-directory: backend
+        run: npx tsc --noEmit
