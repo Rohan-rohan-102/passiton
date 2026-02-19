@@ -6,10 +6,10 @@ import { useSearchParams } from 'react-router-dom'
 
 // 1. Define the Blog interface (Same as your Index page)
 interface Blog {
-    _id: string;
+    id: string;
     title: string;
     slug: string;
-    featuredImage: string;
+    featured_image: string;
     createdAt: string;
     category: {
         slug: string;
@@ -54,7 +54,7 @@ const SearchResult: React.FC = () => {
                 <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
                     {blogData && blogData.blog.length > 0 ? (
                         blogData.blog.map(blog => (
-                            <BlogCard key={blog._id} props={blog} />
+                            <BlogCard key={blog.id} props={blog} />
                         ))
                     ) : (
                         <div className="col-span-full py-10 text-gray-500 italic">
